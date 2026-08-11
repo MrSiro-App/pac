@@ -1262,6 +1262,97 @@
       }
     </style>
 
+
+    <style>
+      /* =========================================================
+         PAC SCALE CONTROL FIX - MOBILE
+         - Khung tổng ngắn lại
+         - 100% hiển thị đủ, không bị mũi tên che
+         - Dùng mũi tên CSS nhỏ thay cho mũi tên mặc định
+         ========================================================= */
+
+      @media (max-width: 820px) {
+        .scale-control {
+          position: relative !important;
+          width: 66px !important;
+          min-width: 66px !important;
+          max-width: 66px !important;
+          height: 28px !important;
+          min-height: 28px !important;
+          padding: 0 !important;
+          overflow: visible !important;
+        }
+
+        .scale-control label {
+          display: none !important;
+        }
+
+        .scale-control select {
+          -webkit-appearance: none !important;
+          appearance: none !important;
+
+          width: 64px !important;
+          min-width: 64px !important;
+          max-width: 64px !important;
+
+          height: 26px !important;
+          min-height: 26px !important;
+
+          margin: 0 !important;
+          padding: 0 17px 0 5px !important;
+
+          border: 1px solid #8fb7c8 !important;
+          border-radius: 0 !important;
+          outline: none !important;
+
+          color: var(--bbq-deep) !important;
+          background: #fff !important;
+
+          font: 700 15px Arial, sans-serif !important;
+          line-height: 26px !important;
+          text-align: center !important;
+          text-align-last: center !important;
+
+          cursor: pointer !important;
+        }
+
+        /* Mũi tên riêng, nhỏ và nằm sát phải */
+        .scale-control::after {
+          content: "" !important;
+          position: absolute !important;
+          right: 7px !important;
+          top: 50% !important;
+          width: 6px !important;
+          height: 6px !important;
+          border-right: 1.5px solid var(--bbq-deep) !important;
+          border-bottom: 1.5px solid var(--bbq-deep) !important;
+          transform: translateY(-65%) rotate(45deg) !important;
+          pointer-events: none !important;
+          z-index: 2 !important;
+        }
+      }
+
+      @media (max-width: 390px) {
+        .scale-control {
+          width: 64px !important;
+          min-width: 64px !important;
+          max-width: 64px !important;
+        }
+
+        .scale-control select {
+          width: 62px !important;
+          min-width: 62px !important;
+          max-width: 62px !important;
+          padding: 0 16px 0 4px !important;
+          font-size: 14px !important;
+        }
+
+        .scale-control::after {
+          right: 6px !important;
+        }
+      }
+    </style>
+
 </head>
       <body>
       <div class="page-scale-shell">
