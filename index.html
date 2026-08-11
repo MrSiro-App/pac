@@ -1113,6 +1113,155 @@
       }
     </style>
 
+
+    <style>
+      /* =========================================================
+         PAC HEADER FINAL
+         - Bỏ khung quanh logo công ty
+         - Thu thấp header, trên/dưới cân nhau theo logo
+         - Desktop + Mobile
+         - Mobile: nới combobox % để mũi tên không che số
+         ========================================================= */
+
+      /* ---------- DESKTOP ---------- */
+      .topbar {
+        min-height: 88px !important;
+        height: auto !important;
+        padding: 7px clamp(22px, 4vw, 70px) !important;
+        align-items: center !important;
+      }
+
+      /* Logo PAC: bỏ hoàn toàn khung trắng/viền/bóng */
+      .brand-mark {
+        width: 106px !important;
+        height: 74px !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .brand-logo {
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        object-fit: contain !important;
+      }
+
+      /* Căn giữa toàn bộ nội dung theo chiều cao header */
+      .brand,
+      .dashboard-meta,
+      .profile {
+        align-items: center !important;
+      }
+
+      /* Logo L giữ kích thước hiện tại */
+      .avatar {
+        width: 54px !important;
+        height: 54px !important;
+      }
+
+      /* ---------- MOBILE / TABLET ---------- */
+      @media (max-width: 820px) {
+        .topbar {
+          min-height: 73px !important;
+          height: auto !important;
+          padding: 6px 14px !important;
+          gap: 12px !important;
+        }
+
+        .brand {
+          gap: 10px !important;
+        }
+
+        .brand-mark {
+          width: 84px !important;
+          height: 61px !important;
+          padding: 0 !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          background: transparent !important;
+          box-shadow: none !important;
+        }
+
+        .avatar {
+          width: 47px !important;
+          height: 47px !important;
+        }
+
+        /* Nới khung % để mũi tên xổ xuống không đè lên 100% */
+        .scale-control {
+          width: 78px !important;
+          min-width: 78px !important;
+          max-width: 78px !important;
+          height: 28px !important;
+        }
+
+        .scale-control select {
+          width: 76px !important;
+          min-width: 76px !important;
+          max-width: 76px !important;
+          height: 26px !important;
+          min-height: 26px !important;
+          padding: 0 18px 0 5px !important;
+          font-size: 15px !important;
+          line-height: 26px !important;
+          text-align: center !important;
+        }
+      }
+
+      /* ---------- MOBILE NHỎ ---------- */
+      @media (max-width: 560px) {
+        .topbar {
+          min-height: 66px !important;
+          height: auto !important;
+          padding: 6px 10px !important;
+          gap: 8px !important;
+        }
+
+        .brand-mark {
+          width: 74px !important;
+          height: 54px !important;
+        }
+
+        .avatar {
+          width: 45px !important;
+          height: 45px !important;
+        }
+
+        .scale-control {
+          width: 76px !important;
+          min-width: 76px !important;
+          max-width: 76px !important;
+        }
+
+        .scale-control select {
+          width: 74px !important;
+          min-width: 74px !important;
+          max-width: 74px !important;
+          padding-right: 18px !important;
+          font-size: 15px !important;
+        }
+      }
+
+      @media (max-width: 390px) {
+        .scale-control {
+          width: 74px !important;
+          min-width: 74px !important;
+          max-width: 74px !important;
+        }
+
+        .scale-control select {
+          width: 72px !important;
+          min-width: 72px !important;
+          max-width: 72px !important;
+          padding-right: 17px !important;
+          font-size: 14px !important;
+        }
+      }
+    </style>
+
 </head>
       <body>
       <div class="page-scale-shell">
