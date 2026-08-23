@@ -971,6 +971,7 @@
 
       /* Mỗi phân hệ chỉ dùng một màu nhận diện */
       .card-nvl { --accent:#1976d2; --accent-dark:#1159a6; --soft:#eef6ff; }
+      .card-order { --accent:#006aa6; --accent-dark:#004d7a; --soft:#eef8fd; }
       .card-bb { --accent:#7b1fa2; --accent-dark:#581477; --soft:#f8f0fc; }
       .card-khsx { --accent:#f57c00; --accent-dark:#bd5d00; --soft:#fff7ec; }
       .card-mh { --accent:#0097a7; --accent-dark:#006d79; --soft:#eefbfc; }
@@ -994,7 +995,7 @@
       0 5px 0 var(--accent-dark),
       0 10px 18px color-mix(in srgb, var(--accent) 24%, transparent);
       }
-      .mark-nvl,.mark-bb,.mark-khsx,.mark-mh,.mark-sx,.mark-ktp,.mark-qc,.mark-bt,.mark-report {
+      .mark-order,.mark-nvl,.mark-bb,.mark-khsx,.mark-mh,.mark-sx,.mark-ktp,.mark-qc,.mark-bt,.mark-report {
       --mark: var(--accent);
       --mark-dark: var(--accent-dark);
       }
@@ -1050,6 +1051,24 @@
       color:#557d1c;
       background:#f0f8df;
       }
+
+      /* Thứ tự theo dòng chảy nghiệp vụ */
+      .card-order { order:1; }
+      .card-khsx { order:2; }
+      .card-mh { order:3; }
+      .card-nvl { order:4; }
+      .card-bb { order:5; }
+      .card-sx { order:6; }
+      .card-ktp { order:7; }
+      .card-report { order:8; }
+
+      /* Banner gọn để khu ứng dụng xuất hiện sớm hơn */
+      .hero {
+      min-height:190px;
+      padding-top:34px;
+      padding-bottom:30px;
+      }
+      .workspace { padding-top:28px; }
 
       /* Mobile */
       @media (max-width:560px) {
@@ -1419,13 +1438,31 @@
       </div>
       <div aria-label="Lọc Nhóm Ứng Dụng" class="filters">
       <button class="active" onclick="setGroup(this, 'Tất Cả')">Tất Cả</button>
+      <button onclick="setGroup(this, 'Kinh Doanh')">Kinh Doanh</button>
       <button onclick="setGroup(this, 'Kho Vận')">Kho Vận</button>
       <button onclick="setGroup(this, 'Chuỗi Cung Ứng')">Chuỗi Cung Ứng</button>
       <button onclick="setGroup(this, 'Vận Hành')">Vận Hành</button>
-      <button onclick="setGroup(this, 'Chất Lượng')">Chất Lượng</button>
       <button onclick="setGroup(this, 'Báo Cáo')">Báo Cáo</button>
       </div>
       <div class="app-grid" id="appGrid">
+      <article class="card card-order" data-group="Kinh Doanh" data-search="Quản Lý Đơn Hàng Khách Hàng Tiến Độ Số Lot Thành Phẩm Giao Hàng">
+      <div class="card-top">
+      <span class="mark mark-order">
+      <b>🧾</b>
+      <small>ĐH</small>
+      </span>
+      <span class="status">Chờ Liên Kết</span>
+      </div>
+      <div class="card-copy">
+      <span class="group-label">Kinh Doanh</span>
+      <h3>Quản Lý Đơn Hàng</h3>
+      <p>Tiếp Nhận Đơn Hàng, Theo Dõi Phân Bổ Số Lot, Tiến Độ Sản Xuất, Nhập Kho Và Giao Hàng.</p>
+      </div>
+      <button class="open-button" onclick="showWaiting('Quản Lý Đơn Hàng')">
+      <span>Xem Bản Demo</span>
+      <span class="arrow">→</span>
+      </button>
+      </article>
       <article class="card card-nvl" data-group="Kho Vận" data-search="Quản Lý Kho Nguyên Vật Liệu Nhập Xuất Tồn Lô Hạn Sử Dụng">
       <div class="card-top">
       <span class="mark mark-nvl">
@@ -1534,24 +1571,6 @@
       <span class="arrow">→</span>
       </button>
       </article>
-      <article class="card card-qc" data-group="Chất Lượng" data-search="Chất Lượng QC Kiểm Tra Bất Thường Hồ Sơ Khắc Phục">
-      <div class="card-top">
-      <span class="mark mark-qc">
-      <b>🔬</b>
-      <small>QC</small>
-      </span>
-      <span class="status">Chờ Liên Kết</span>
-      </div>
-      <div class="card-copy">
-      <span class="group-label">Chất Lượng</span>
-      <h3>Chất Lượng</h3>
-      <p>Kiểm Tra QC, Ghi Nhận Bất Thường, Quản Lý Hồ Sơ Và Hành Động Khắc Phục.</p>
-      </div>
-      <button class="open-button" onclick="showWaiting('Chất Lượng')">
-      <span>Xem Bản Demo</span>
-      <span class="arrow">→</span>
-      </button>
-      </article>
       <article class="card card-report" data-group="Báo Cáo" data-search="Báo Cáo Điều Hành Tổng Hợp Chỉ Số Kho Mua hàng Sản Xuất Chất Lượng">
       <div class="card-top">
       <span class="mark mark-report">
@@ -1563,7 +1582,7 @@
       <div class="card-copy">
       <span class="group-label">Báo Cáo</span>
       <h3>Báo Cáo Điều Hành</h3>
-      <p>Tổng Hợp Chỉ Số Kho, Mua Hàng, Sản Xuất Và Chất Lượng Trên Cùng Một Góc Nhìn.</p>
+      <p>Tổng Hợp Chỉ Số Đơn Hàng, Kho, Mua Hàng Và Sản Xuất Trên Cùng Một Góc Nhìn.</p>
       </div>
       <button class="open-button" onclick="showWaiting('Báo Cáo Điều Hành')">
       <span>Xem Bản Demo</span>
