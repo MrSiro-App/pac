@@ -1473,6 +1473,73 @@
         box-shadow: 0 3px 0 #008fcf !important;
       }
     </style>
+    <style>
+      /* PAC typography refinement — nét chữ thanh, rõ và hỗ trợ đầy đủ tiếng Việt */
+      :root {
+        --font-text: "Segoe UI Variable Text", "Aptos", "Segoe UI", Arial, sans-serif;
+        --font-display: "Segoe UI Variable Display", "Aptos Display", "Segoe UI", Arial, sans-serif;
+      }
+
+      body,
+      button,
+      input,
+      select {
+        font-family: var(--font-text) !important;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .brand-copy strong,
+      .profile-copy strong,
+      h1,
+      .toolbar h2,
+      .card h3,
+      .open-button {
+        font-family: var(--font-display) !important;
+      }
+
+      .brand-copy strong,
+      .profile-copy strong { font-weight: 600 !important; }
+
+      h1 {
+        font-weight: 600 !important;
+        letter-spacing: -.028em !important;
+      }
+
+      .toolbar h2,
+      .card h3 {
+        font-weight: 600 !important;
+        letter-spacing: -.015em !important;
+      }
+
+      .hero p,
+      .toolbar p,
+      .card p,
+      .brand-copy small,
+      .profile-copy small,
+      .system-status small,
+      footer { font-weight: 400 !important; }
+
+      .filters button { font-weight: 450 !important; }
+      .filters button.active { font-weight: 550 !important; }
+
+      .ticker-track span,
+      .eyebrow,
+      .group-label,
+      .status,
+      .open-button,
+      .scale-control,
+      .scale-control label,
+      .scale-control select,
+      .footer-contact a { font-weight: 600 !important; }
+
+      .mark small { font-weight: 650 !important; }
+      .footer-brand { font-weight: 600 !important; }
+      .footer-role { font-weight: 400 !important; }
+    </style>
 </head>
       <body>
       <div class="page-scale-shell">
