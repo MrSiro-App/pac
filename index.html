@@ -1373,20 +1373,28 @@
     </style>
 
     <style>
-      /* Fix: bỏ màu đỏ bị ép riêng cho tab/thẻ Sản Xuất để hover đồng bộ với các tab còn lại. */
+      /* Fix: Sản Xuất bình thường màu đỏ, khi rê chuột chuyển sang xanh nhạt như các tab khác. */
       .card.card-sx {
-        --accent: #607d8b !important;
-        --accent-dark: #455a64 !important;
-        --soft: #f1f5f7 !important;
-        --card-accent: #607d8b !important;
-        border-color: color-mix(in srgb, var(--accent) 22%, #dbe8ec) !important;
+        --accent: #d32f2f !important;
+        --accent-dark: #a12020 !important;
+        --accent-hover: #00a9d6 !important;
+        --accent-hover-dark: #008fcf !important;
+        --soft-hover: #e2f8ff !important;
+        --soft: #fff2f2 !important;
+        --card-accent: #d32f2f !important;
+        border-color: #efb8b8 !important;
         border-left-color: var(--accent) !important;
         background: linear-gradient(155deg, #ffffff 18%, var(--soft) 100%) !important;
       }
 
       .card.card-sx:hover {
-        border-color: color-mix(in srgb, var(--accent) 42%, #dbe8ec) !important;
-        border-left-color: var(--accent) !important;
+        --accent: var(--accent-hover) !important;
+        --accent-dark: var(--accent-hover-dark) !important;
+        --soft: var(--soft-hover) !important;
+        --card-accent: var(--accent-hover) !important;
+        border-color: #a7dce8 !important;
+        border-left-color: var(--accent-hover) !important;
+        background: linear-gradient(155deg, #ffffff 18%, var(--soft-hover) 100%) !important;
       }
 
       .card.card-sx::after {
@@ -1417,6 +1425,11 @@
       .card.card-sx .open-button .arrow {
         background: var(--accent) !important;
         box-shadow: 0 3px 0 var(--accent-dark) !important;
+      }
+
+      .card.card-sx:hover .open-button .arrow {
+        background: var(--accent-hover) !important;
+        box-shadow: 0 3px 0 var(--accent-hover-dark) !important;
       }
     </style>
 </head>
