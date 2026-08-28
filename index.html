@@ -1763,7 +1763,7 @@
       <h3>Quản Lý Kho TP</h3>
       <p>Quản Lý Nhập Kho, Xuất Kho, Tồn Thành Phẩm, Số Lô Và Hạn Sử Dụng Sau Sản Xuất.</p>
       </div>
-      <button class="open-button" onclick="openApp('https://script.google.com/macros/s/AKfycbz9DrIMZq843nB_h5ez9W9VSGNdm6dFS5Cm_k9tVar993HKdl0ssfcJKvqtkN7ldoJIYg/exec')">
+      <button class="open-button" onclick="openLink('https://script.google.com/macros/s/AKfycbz9DrIMZq843nB_h5ez9W9VSGNdm6dFS5Cm_k9tVar993HKdl0ssfcJKvqtkN7ldoJIYg/exec')">
       <span>Mở Ứng Dụng</span>
       <span class="arrow">→</span>
       </button>
@@ -1923,6 +1923,10 @@
 
       function openLink(url) {
         window.open(url, '_blank', 'noopener,noreferrer');
+      }
+
+      function openApp(url) {
+        openLink(url);
       }
 
       function showWaiting(name) {
