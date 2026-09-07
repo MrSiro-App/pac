@@ -401,9 +401,9 @@
         content: "";
         position: absolute;
         inset: 0 auto 0 0;
-        width: 5px;
+        width: 6px;
         background: var(--card-accent, var(--bbq));
-        opacity: .88;
+        opacity: 1;
         pointer-events: none;
       }
 
@@ -431,17 +431,6 @@
         --card-accent: #8979bc;
         background: linear-gradient(155deg, #ffffff 0%, #f6f3ff 100%);
         border-color: #d8d0ef;
-      }
-
-      .bb-purple { --mark: #8e44ad; --mark-dark: #64277a; }
-
-      .card {
-        border-left-width: 1px;
-      }
-
-      .card::before {
-        width: 6px;
-        opacity: 1;
       }
 
       .card .mark {
@@ -977,6 +966,7 @@
       .card-mh { --accent:#00bfa5; --accent-dark:#008577; --soft:#ecfffb; }
       .card-sx { --accent:#d32f2f; --accent-dark:#a12020; --soft:#fff2f2; }
       .card-ktp { --accent:#2e7d32; --accent-dark:#1d5a22; --soft:#f0faf1; }
+      .card-dmtp { --accent:#00897b; --accent-dark:#00695c; --soft:#eefbf8; }
       .card-qc { --accent:#7cb342; --accent-dark:#5d892d; --soft:#f7fceb; }
       .card-bt { --accent:#546e7a; --accent-dark:#394c55; --soft:#f4f7f8; }
       .card-report { --accent:#f4b400; --accent-dark:#b88200; --soft:#fff9e8; }
@@ -995,7 +985,7 @@
       0 5px 0 var(--accent-dark),
       0 10px 18px color-mix(in srgb, var(--accent) 24%, transparent);
       }
-      .mark-order,.mark-nvl,.mark-bb,.mark-khsx,.mark-mh,.mark-sx,.mark-ktp,.mark-qc,.mark-bt,.mark-report {
+      .mark-order,.mark-nvl,.mark-bb,.mark-khsx,.mark-mh,.mark-sx,.mark-ktp,.mark-dmtp,.mark-qc,.mark-bt,.mark-report {
       --mark: var(--accent);
       --mark-dark: var(--accent-dark);
       }
@@ -1053,14 +1043,17 @@
       }
 
       /* Thứ tự theo dòng chảy nghiệp vụ */
-      .card-order { order:1; }
-      .card-khsx { order:2; }
-      .card-mh { order:3; }
-      .card-nvl { order:4; }
-      .card-bb { order:5; }
-      .card-sx { order:6; }
-      .card-ktp { order:7; }
-      .card-report { order:8; }
+      .card-dmtp { order:1; }
+      .card-qc { order:2; }
+      .card-bt { order:3; }
+      .card-order { order:4; }
+      .card-khsx { order:5; }
+      .card-mh { order:6; }
+      .card-sx { order:7; }
+      .card-nvl { order:8; }
+      .card-bb { order:9; }
+      .card-ktp { order:10; }
+      .card-report { order:11; }
 
       /* Banner gọn để khu ứng dụng xuất hiện sớm hơn */
       .hero {
@@ -1625,7 +1618,7 @@
       <div class="toolbar">
       <div>
       <h2>Ứng Dụng Nghiệp Vụ</h2>
-      <p>8 Ứng Dụng Trong Hệ Thống Điều Hành</p>
+      <p>11 Ứng Dụng Trong Hệ Thống Điều Hành</p>
       </div>
       <label class="search">
       <span aria-hidden="true" class="search-icon">
@@ -1635,10 +1628,12 @@
       </div>
       <div aria-label="Lọc Nhóm Ứng Dụng" class="filters">
       <button class="active" onclick="setGroup(this, 'Tất Cả')">Tất Cả</button>
+      <button onclick="setGroup(this, 'Danh Mục')">Danh Mục</button>
       <button onclick="setGroup(this, 'Kinh Doanh')">Kinh Doanh</button>
-      <button onclick="setGroup(this, 'Kho Vận')">Kho Vận</button>
+      <button onclick="setGroup(this, 'Kế Hoạch')">Kế Hoạch</button>
       <button onclick="setGroup(this, 'Chuỗi Cung Ứng')">Chuỗi Cung Ứng</button>
-      <button onclick="setGroup(this, 'Vận Hành')">Vận Hành</button>
+      <button onclick="setGroup(this, 'Sản Xuất')">Sản Xuất</button>
+      <button onclick="setGroup(this, 'Kho Vận')">Kho Vận</button>
       <button onclick="setGroup(this, 'Báo Cáo')">Báo Cáo</button>
       </div>
       <div class="app-grid" id="appGrid">
@@ -1696,7 +1691,7 @@
       <span class="arrow">→</span>
       </button>
       </article>
-      <article class="card card-khsx" data-group="Vận Hành" data-search="KHSX Kế Hoạch Sản Xuất Kế Hoạch Tuần Nhu Cầu Nguyên Liệu Lịch Sản Xuất">
+      <article class="card card-khsx" data-group="Kế Hoạch" data-search="KHSX Kế Hoạch Sản Xuất Kế Hoạch Tuần Nhu Cầu Nguyên Liệu Lịch Sản Xuất">
       <div class="card-top">
       <span class="mark mark-khsx">
       <b>📅</b>
@@ -1705,11 +1700,65 @@
       <span class="status ready">Sẵn Sàng</span>
       </div>
       <div class="card-copy">
-      <span class="group-label">Vận Hành</span>
+      <span class="group-label">Kế Hoạch</span>
       <h3>Kế Hoạch Sản Xuất</h3>
       <p>Lập Kế Hoạch Sản Xuất, Theo Dõi Nhu Cầu Nguyên Vật Liệu Và Tiến Độ Thực Hiện.</p>
       </div>
       <button class="open-button" onclick="openLink('https://script.google.com/macros/s/AKfycbyoeke3l-VWIxRwFGN6n8jTnj6FpZ1jfls_rTDQebjeO5foL8QwXzAQgKUu6XiGBNCtBw/exec')">
+      <span>Mở Ứng Dụng</span>
+      <span class="arrow">→</span>
+      </button>
+      </article>
+      <article class="card card-dmtp" data-group="Danh Mục" data-search="Danh Mục Thành Phẩm Mã TP Tên Thành Phẩm Kế Hoạch MaTP BOM">
+      <div class="card-top">
+      <span class="mark mark-dmtp">
+      <b>🏷️</b>
+      <small>MTP</small>
+      </span>
+      <span class="status ready">Sẵn Sàng</span>
+      </div>
+      <div class="card-copy">
+      <span class="group-label">Danh Mục</span>
+      <h3>Quản Lý Mã Thành Phẩm</h3>
+      <p>Kế Hoạch Tạo Và Chuẩn Hóa Mã TP, Tên Thành Phẩm, Quy Cách, BOM Và Trạng Thái Sử Dụng.</p>
+      </div>
+      <button class="open-button" onclick="openLink('https://script.google.com/macros/s/AKfycbw0IaHDPhnXJdyKN00Hx2i8e4AsFQGib1SxLPN-cNZbcLyekfEfP3_ckDMKz46ni520lA/exec')">
+      <span>Mở Ứng Dụng</span>
+      <span class="arrow">→</span>
+      </button>
+      </article>
+      <article class="card card-bt" data-group="Danh Mục" data-search="Danh Mục R&D Mã NVL Mã BTP Định Mức BTP Định Mức TP BOM Công Thức">
+      <div class="card-top">
+      <span class="mark mark-bt">
+      <b>🧬</b>
+      <small>R&D</small>
+      </span>
+      <span class="status ready">Sẵn Sàng</span>
+      </div>
+      <div class="card-copy">
+      <span class="group-label">Danh Mục</span>
+      <h3>Mã NVL - BTP - Định Mức</h3>
+      <p>R&D Tạo Và Quản Lý Mã NVL, Mã BTP, Định Mức BTP, Định Mức TP Và BOM Công Thức.</p>
+      </div>
+      <button class="open-button" onclick="openLink('https://script.google.com/macros/s/AKfycbyZoJbIngyl9nkriBHj1Hzratl1zrDE5MAoVdH6PI7kRhsSyLh_uiOsa0p4KlGjioixmg/exec')">
+      <span>Mở Ứng Dụng</span>
+      <span class="arrow">→</span>
+      </button>
+      </article>
+      <article class="card card-qc" data-group="Danh Mục" data-search="Danh Mục Bao Bì Mã BB Định Mức TP Bao Bì QC Quy Cách">
+      <div class="card-top">
+      <span class="mark mark-qc">
+      <b>📦</b>
+      <small>BB</small>
+      </span>
+      <span class="status ready">Sẵn Sàng</span>
+      </div>
+      <div class="card-copy">
+      <span class="group-label">Danh Mục</span>
+      <h3>Mã BB - Định Mức Bao Bì</h3>
+      <p>QC Tạo Và Quản Lý Mã Bao Bì, Quy Cách, Định Mức TP Phần Bao Bì Và Trạng Thái Sử Dụng.</p>
+      </div>
+      <button class="open-button" onclick="openLink('https://script.google.com/macros/s/AKfycbzFsXZdofHcYT6HZ83xVhSRakxezs9NmVkjr6K7vbiRSdjx5bo3mPl5wO6T0KqfTN-z/exec')">
       <span>Mở Ứng Dụng</span>
       <span class="arrow">→</span>
       </button>
@@ -1732,7 +1781,7 @@
       <span class="arrow">→</span>
       </button>
       </article>
-      <article class="card card-sx" data-group="Vận Hành" data-search="Sản Xuất Lệnh Sản Lượng Tiến Độ Máy">
+      <article class="card card-sx" data-group="Sản Xuất" data-search="Sản Xuất Lệnh Sản Lượng Tiến Độ Máy">
       <div class="card-top">
       <span class="mark mark-sx">
       <b>🏭</b>
@@ -1741,7 +1790,7 @@
       <span class="status ready">Sẵn Sàng</span>
       </div>
       <div class="card-copy">
-      <span class="group-label">Vận Hành</span>
+      <span class="group-label">Sản Xuất</span>
       <h3>Sản Xuất</h3>
       <p>Quản Lý Lệnh Sản Xuất, Sản Lượng, Tiến Độ Thực Hiện Và Trạng Thái Thiết Bị.</p>
       </div>
