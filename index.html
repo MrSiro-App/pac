@@ -434,14 +434,14 @@
         border-color: #ddc1ed;
       }
       .card.card-khsx {
-        --card-accent: #1976d2;
-        background: linear-gradient(155deg, #ffffff 0%, #eef6ff 100%);
-        border-color: #b8d8f5;
+        --card-accent: #00a6d6;
+        background: linear-gradient(155deg, #ffffff 0%, #eefbff 100%);
+        border-color: #9fdff0;
       }
       .card.card-mh {
-        --card-accent: #e6007e;
-        background: linear-gradient(155deg, #ffffff 0%, #fff2f8 100%);
-        border-color: #f2bfd9;
+        --card-accent: #f57c00;
+        background: linear-gradient(155deg, #ffffff 0%, #fff7ec 100%);
+        border-color: #f3c58f;
       }
       .card.card-sx {
         --card-accent: #8979bc;
@@ -838,12 +838,12 @@
       .mark b { font-size: 19px; font-weight: 400; }
       .mark small { font-size: 9px; font-weight: 750; letter-spacing: .07em; }
 
-      .khsx-orange { --mark: #1976d2; --mark-dark: #1159a6; }
+      .khsx-orange { --mark: #00a6d6; --mark-dark: #007aa0; }
       .report-yellow { --mark: #fbc02d; --mark-dark: #c49000; color: #4d3900; }
       .sx-slate { --mark: #607d8b; --mark-dark: #455a64; }
       .ktp-green { --mark: #2e7d32; --mark-dark: #1f5a23; }
 
-      .card-khsx { --accent: #1976d2; --soft: #eef6ff; }
+      .card-khsx { --accent: #00a6d6; --soft: #eefbff; }
       .card-report { --accent: #fbc02d; --soft: #fffbea; }
       .card-ktp { --accent: #2e7d32; --soft: #eef9ef; }
       .card-sx { --accent: #607d8b; --soft: #f1f5f7; }
@@ -852,8 +852,8 @@
         border-left: 6px solid var(--accent);
         background: linear-gradient(145deg, #fff 18%, var(--soft) 100%);
       }
-      .card-khsx .group-label, .card-khsx .open-button { color: #1159a6; }
-      .card-khsx .arrow { background: #1976d2; box-shadow: 0 3px 0 #1159a6; }
+      .card-khsx .group-label, .card-khsx .open-button { color: #007aa0; }
+      .card-khsx .arrow { background: #00a6d6; box-shadow: 0 3px 0 #007aa0; }
       .card-report .group-label, .card-report .open-button { color: #8a6800; }
       .card-report .arrow { color: #493600; background: #fbc02d; box-shadow: 0 3px 0 #c49000; }
       .card-ktp .group-label, .card-ktp .open-button { color: #2e7d32; }
@@ -932,8 +932,8 @@
       .card-nvl { --accent:#1976d2; --accent-dark:#1159a6; --soft:#eef6ff; }
       .card-order { --accent:#7cb342; --accent-dark:#5d892d; --soft:#f7fceb; }
       .card-bb { --accent:#7b1fa2; --accent-dark:#581477; --soft:#f8f0fc; }
-      .card-khsx { --accent:#1976d2; --accent-dark:#1159a6; --soft:#eef6ff; }
-      .card-mh { --accent:#00a6d6; --accent-dark:#007aa0; --soft:#eefbff; }
+      .card-khsx { --accent:#00a6d6; --accent-dark:#007aa0; --soft:#eefbff; }
+      .card-mh { --accent:#f57c00; --accent-dark:#bd5d00; --soft:#fff7ec; }
       .card-sx { --accent:#d32f2f; --accent-dark:#a12020; --soft:#fff2f2; }
       .card-ktp { --accent:#2e7d32; --accent-dark:#1d5a22; --soft:#f0faf1; }
       .card-dmtp { --accent:#00897b; --accent-dark:#00695c; --soft:#eefbf8; }
@@ -1041,7 +1041,7 @@
       .mark small { font-size:17px; }
       }
     </style>
-    <style> /* =========================================================    PAC FINAL OVERRIDES    Đồng bộ tuyệt đối SX và MH: viền, nền thẻ, nền logo, chữ và nút ========================================================= */ .card.card-sx {   --accent: #d32f2f;   --accent-dark: #a12020;   --soft: #fff2f2;   --card-accent: #d32f2f;   border: 1px solid #efb8b8;   border-left: 6px solid var(--accent);   background: linear-gradient(155deg, #ffffff 18%, var(--soft) 100%); } .card.card-sx::after {   background: rgba(211, 47, 47, .09); } .card.card-sx .mark {   --mark: var(--accent);   --mark-dark: var(--accent-dark);   background: linear-gradient(145deg, #ef6b6b 0%, var(--accent) 78%);   box-shadow:     inset 0 2px 2px rgba(255,255,255,.36),     inset 0 -4px 7px rgba(0,0,0,.11),     0 5px 0 var(--accent-dark),     0 10px 18px rgba(211,47,47,.24); } .card.card-sx .group-label, .card.card-sx .open-button {   color: var(--accent); } .card.card-sx .open-button {   border-top-color: rgba(211,47,47,.20); } .card.card-sx .open-button .arrow {   background: var(--accent);   box-shadow: 0 3px 0 var(--accent-dark); }  .card.card-mh {   --accent: #00a6d6;   --accent-dark: #007aa0;   --soft: #eefbff;   --card-accent: #00a6d6;   border: 1px solid #9fdff0;   border-left: 6px solid var(--accent);   background: linear-gradient(155deg, #ffffff 18%, var(--soft) 100%); } .card.card-mh::after {   background: rgba(0,166,214,.09); } .card.card-mh .mark {   --mark: var(--accent);   --mark-dark: var(--accent-dark);   background: linear-gradient(145deg, #58d5f1 0%, var(--accent) 78%);   box-shadow:     inset 0 2px 2px rgba(255,255,255,.36),     inset 0 -4px 7px rgba(0,0,0,.11),     0 5px 0 var(--accent-dark),     0 10px 18px rgba(0,166,214,.24); } .card.card-mh .group-label, .card.card-mh .open-button {   color: var(--accent); } .card.card-mh .open-button {   border-top-color: rgba(0,166,214,.20); } .card.card-mh .open-button .arrow {   background: var(--accent);   box-shadow: 0 3px 0 var(--accent-dark); }  @media (max-width: 560px) {   .card.card-sx,   .card.card-mh {     border-left-width: 5px;   } } </style>
+    <style> /* =========================================================    PAC FINAL OVERRIDES    Đồng bộ tuyệt đối SX và MH: viền, nền thẻ, nền logo, chữ và nút ========================================================= */ .card.card-sx {   --accent: #d32f2f;   --accent-dark: #a12020;   --soft: #fff2f2;   --card-accent: #d32f2f;   border: 1px solid #efb8b8;   border-left: 6px solid var(--accent);   background: linear-gradient(155deg, #ffffff 18%, var(--soft) 100%); } .card.card-sx::after {   background: rgba(211, 47, 47, .09); } .card.card-sx .mark {   --mark: var(--accent);   --mark-dark: var(--accent-dark);   background: linear-gradient(145deg, #ef6b6b 0%, var(--accent) 78%);   box-shadow:     inset 0 2px 2px rgba(255,255,255,.36),     inset 0 -4px 7px rgba(0,0,0,.11),     0 5px 0 var(--accent-dark),     0 10px 18px rgba(211,47,47,.24); } .card.card-sx .group-label, .card.card-sx .open-button {   color: var(--accent); } .card.card-sx .open-button {   border-top-color: rgba(211,47,47,.20); } .card.card-sx .open-button .arrow {   background: var(--accent);   box-shadow: 0 3px 0 var(--accent-dark); }  .card.card-khsx {   --accent: #00a6d6;   --accent-dark: #007aa0;   --soft: #eefbff;   --card-accent: #00a6d6;   border: 1px solid #9fdff0;   border-left: 6px solid var(--accent);   background: linear-gradient(155deg, #ffffff 18%, var(--soft) 100%); } .card.card-khsx::after {   background: rgba(0,166,214,.09); } .card.card-khsx .mark {   --mark: var(--accent);   --mark-dark: var(--accent-dark);   background: linear-gradient(145deg, #58d5f1 0%, var(--accent) 78%);   box-shadow:     inset 0 2px 2px rgba(255,255,255,.36),     inset 0 -4px 7px rgba(0,0,0,.11),     0 5px 0 var(--accent-dark),     0 10px 18px rgba(0,166,214,.24); } .card.card-khsx .group-label, .card.card-khsx .open-button {   color: var(--accent); } .card.card-khsx .open-button {   border-top-color: rgba(0,166,214,.20); } .card.card-khsx .open-button .arrow {   background: var(--accent);   box-shadow: 0 3px 0 var(--accent-dark); }  .card.card-mh {   --accent: #f57c00;   --accent-dark: #bd5d00;   --soft: #fff7ec;   --card-accent: #f57c00;   border: 1px solid #f3c58f;   border-left: 6px solid var(--accent);   background: linear-gradient(155deg, #ffffff 18%, var(--soft) 100%); } .card.card-mh::after {   background: rgba(245,124,0,.09); } .card.card-mh .mark {   --mark: var(--accent);   --mark-dark: var(--accent-dark);   background: linear-gradient(145deg, #ffad52 0%, var(--accent) 78%);   box-shadow:     inset 0 2px 2px rgba(255,255,255,.36),     inset 0 -4px 7px rgba(0,0,0,.11),     0 5px 0 var(--accent-dark),     0 10px 18px rgba(245,124,0,.24); } .card.card-mh .group-label, .card.card-mh .open-button {   color: var(--accent); } .card.card-mh .open-button {   border-top-color: rgba(245,124,0,.20); } .card.card-mh .open-button .arrow {   background: var(--accent);   box-shadow: 0 3px 0 var(--accent-dark); }  @media (max-width: 560px) {   .card.card-sx,   .card.card-khsx,   .card.card-mh {     border-left-width: 5px;   } } </style>
       
     <style>
       /* =========================================================
