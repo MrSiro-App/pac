@@ -1388,6 +1388,56 @@
   white-space: nowrap !important;
 }
 </style>
+
+    <style>
+      /* PAC ICON FIX — Mã TP + BOM / Kho TP */
+      .mark .mark-svg {
+        width: 42px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        line-height: 1;
+      }
+      .mark .mark-svg svg {
+        width: 42px;
+        height: 38px;
+        display: block;
+        overflow: visible;
+      }
+      .mark .mark-svg svg * {
+        vector-effect: non-scaling-stroke;
+      }
+      .mark .mark-svg .icon-line {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .mark .mark-svg .icon-fill {
+        fill: rgba(255,255,255,.18);
+        stroke: currentColor;
+        stroke-width: 1.5;
+      }
+      .mark .mark-svg text {
+        fill: currentColor;
+        font-family: Arial, sans-serif;
+        font-weight: 800;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      .mark .mark-svg .tp-text { font-size: 7px; }
+      .mark .mark-svg .child-text { font-size: 5.2px; }
+      .mark .mark-svg .box-fill {
+        fill: rgba(255,255,255,.28);
+        stroke: currentColor;
+        stroke-width: 1.5;
+      }
+      @media (max-width:560px) {
+        .mark .mark-svg,
+        .mark .mark-svg svg { width: 39px; height: 35px; }
+      }
+    </style>
 </head>
       <body>
       <div class="page-shell">
@@ -1523,7 +1573,7 @@
       <div class="card-top">
       <span class="mark mark-dmtp">
       <b>🏷️</b>
-      <small>MTP</small>
+      <small>BOM</small>
       </span>
       <span class="status ready">Sẵn Sàng</span>
       </div>
@@ -1612,7 +1662,27 @@
       <article class="card card-ktp" data-group="Kho Vận" data-search="Kho Thành Phẩm Thành Phẩm Nhập Kho Xuất Kho Tồn Kho Lô Hạn Sử Dụng">
       <div class="card-top">
       <span class="mark mark-ktp">
-      <b>🏷️</b>
+      <b class="mark-svg" aria-hidden="true">
+        <svg viewBox="0 0 48 42" focusable="false">
+          <rect x="5" y="3" width="4.2" height="35" rx="1.6" fill="#1d5fd0"></rect>
+          <rect x="38.8" y="3" width="4.2" height="35" rx="1.6" fill="#1d5fd0"></rect>
+          <rect x="8.5" y="11" width="31" height="3.6" rx="1.3" fill="#f59e0b"></rect>
+          <rect x="8.5" y="22" width="31" height="3.6" rx="1.3" fill="#f59e0b"></rect>
+          <rect x="8.5" y="33" width="31" height="3.6" rx="1.3" fill="#f59e0b"></rect>
+          <rect x="11" y="5.7" width="11" height="6.8" rx="1.4" fill="#f5cf82"></rect>
+          <rect x="25.5" y="5.7" width="10.5" height="6.8" rx="1.4" fill="#f5cf82"></rect>
+          <rect x="12" y="16.8" width="10.2" height="6.8" rx="1.4" fill="#f5cf82"></rect>
+          <rect x="25" y="16.8" width="11.2" height="6.8" rx="1.4" fill="#f5cf82"></rect>
+          <rect x="14" y="27.8" width="8.8" height="6.5" rx="1.4" fill="#f5cf82"></rect>
+          <rect x="25" y="27.8" width="10.8" height="6.5" rx="1.4" fill="#f5cf82"></rect>
+          <rect x="15.6" y="6.4" width="1.5" height="5.4" rx="0.5" fill="#dda754"></rect>
+          <rect x="29.9" y="6.4" width="1.5" height="5.4" rx="0.5" fill="#dda754"></rect>
+          <rect x="16" y="17.5" width="1.5" height="5.4" rx="0.5" fill="#dda754"></rect>
+          <rect x="30" y="17.5" width="1.5" height="5.4" rx="0.5" fill="#dda754"></rect>
+          <rect x="17.2" y="28.4" width="1.4" height="5.0" rx="0.5" fill="#dda754"></rect>
+          <rect x="29.5" y="28.4" width="1.4" height="5.0" rx="0.5" fill="#dda754"></rect>
+        </svg>
+      </b>
       <small>TP</small>
       </span>
       <span class="status ready">Sẵn Sàng</span>
