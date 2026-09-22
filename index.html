@@ -1438,6 +1438,28 @@
         .mark .mark-svg svg { width: 39px; height: 35px; }
       }
     </style>
+
+    <style>
+      /* PAC FINAL FIX — Kho NVL / Kho BB: cạnh trái đậm, đồng bộ các thẻ khác */
+      .card.card-nvl {
+        --card-accent: #1976d2;
+        border-color: #a9cbea;
+        border-left: 6px solid #1976d2;
+      }
+
+      .card.card-bb {
+        --card-accent: #7b1fa2;
+        border-color: #d3afe4;
+        border-left: 6px solid #7b1fa2;
+      }
+
+      @media (max-width: 560px) {
+        .card.card-nvl,
+        .card.card-bb {
+          border-left-width: 5px;
+        }
+      }
+    </style>
 </head>
       <body>
       <div class="page-shell">
@@ -1629,15 +1651,15 @@
       <b>🛒</b>
       <small>MH</small>
       </span>
-      <span class="status">Chờ Liên Kết</span>
+      <span class="status ready">Sẵn Sàng</span>
       </div>
       <div class="card-copy">
       <span class="group-label">Chuỗi Cung Ứng</span>
       <h3>Mua Hàng</h3>
       <p>Đề Nghị Mua, Đơn Hàng, Nhà Cung Cấp Và Tiến Độ Giao Hàng Được Theo Dõi Tập Trung.</p>
       </div>
-      <button class="open-button" onclick="showWaiting('Mua Hàng')">
-      <span>Xem Bản Demo</span>
+      <button class="open-button" onclick="openLink('https://script.google.com/macros/s/AKfycbx6pM9dPeelt6pR_fmDD8d9nTfba0FLxq5IbM4S87mh3wzJG5q-EL-2QlocEzRE0Qct0A/exec')">
+      <span>Mở Ứng Dụng</span>
       <span class="arrow">→</span>
       </button>
       </article>
